@@ -1,4 +1,4 @@
-# Calorie Tracker
+# Calorie Calculator
 
 A small, in-progress web app for tracking daily calorie intake.
 
