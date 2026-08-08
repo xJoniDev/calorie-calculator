@@ -1,6 +1,6 @@
 # Calorie Calculator
 
-A small, in-progress web app for tracking daily calorie intake.
+A small, in-progress web app for calculating nutritional values
 
 **Status:** In progress :]
 
@@ -10,3 +10,8 @@ A small, in-progress web app for tracking daily calorie intake.
 
 ## Current features
 - Calculation of nutritional values based on: weight, gender, height, sports activities and age
+
+## Future Features
+- Local authorizations
+- Save Calculation
+- Sending Data to Microsoft :3
