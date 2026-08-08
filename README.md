@@ -9,5 +9,4 @@ A small, in-progress web app for tracking daily calorie intake.
 - Use `register.html` to create a new account if the page is present.
 
 ## Current features
-- Add and remove food entries
-- Simple daily calorie total display
+- Calculation of nutritional values based on: weight, gender, height, sports activities and age
