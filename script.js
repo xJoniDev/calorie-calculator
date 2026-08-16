@@ -1,6 +1,7 @@
 console.log("Calorie Tracker script loaded.");
 
 let result = document.getElementById("result");
+let calculatedValues = null;
 
 function login() {
     const emailField = document.getElementById("email-login");
@@ -63,6 +64,18 @@ function calculate() {
     // Salt 5g for adults, 3g for children under 14
     const saltG = age < 14 ? 3 : 5;
 
+    // Store calculated values in an object for Downloadable txt file
+    calculatedValues = {
+    calories: calories,
+    fatG: fatG,
+    fatPercent: Math.round((fatCal / calories) * 100),
+    carbsG: carbsG,
+    carbsPercent: Math.round((carbsCal / calories) * 100),
+    sugarG: sugarG,
+    proteinG: proteinG,
+    proteinPercent: Math.round((proteinCal / calories) * 100),
+    saltG: saltG
+};
 
     //show results
     result.innerHTML = `
@@ -71,10 +84,49 @@ function calculate() {
         <tr><th>Nutrient</th><th>Amount</th></tr>
         <tr><td>Calories</td><td>${calories} kcal</td></tr>
         <tr><td>Fat</td><td>${fatG} g (${Math.round((fatCal/calories)*100)}%)</td></tr>
-        <tr><td>Kohlenhydrate</td><td>${carbsG} g (${Math.round((carbsCal/calories)*100)}%)</td></tr>
+        <tr><td>Carbohydrates</td><td>${carbsG} g (${Math.round((carbsCal/calories)*100)}%)</td></tr>
         <tr><td>Sugar</td><td>${sugarG} g (≤10%)</td></tr>
         <tr><td>Protein</td><td>${proteinG} g (${Math.round((proteinCal/calories)*100)}%)</td></tr>
-        <tr><td>Salz</td><td>${saltG} g</td></tr>
+        <tr><td>Salt</td><td>${saltG} g</td></tr>
       </table>
+        <button id="download-btn" onclick="downloadTxt()">Download as TXT</button>
       `;
+}
+
+// Function to download the calculated values as a txt file
+function downloadTxt() {
+    if (!calculatedValues) {
+        alert("Please calculate your daily intake first.");
+        return;
+    }
+
+    const werte = [
+        "Recommended daily intake",
+        "",
+        `Calories: ${calculatedValues.calories} kcal`,
+        `Fat: ${calculatedValues.fatG} g (${calculatedValues.fatPercent}%)`,
+        `Carbohydrates: ${calculatedValues.carbsG} g (${calculatedValues.carbsPercent}%)`,
+        `Sugar: ${calculatedValues.sugarG} g (≤10%)`,
+        `Protein: ${calculatedValues.proteinG} g (${calculatedValues.proteinPercent}%)`,
+        `Salt: ${calculatedValues.saltG} g`
+    ];
+
+    const text = werte.join("\n");
+
+    const blob = new Blob(
+        [text],
+        { type: "text/plain;charset=utf-8" }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "calorie-recommendation.txt";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
 }

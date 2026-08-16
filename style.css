@@ -221,3 +221,14 @@ select:focus {
     }
 }
 
+#download-btn {
+    margin-top: 12px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3ecf7b, #2ca75f);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
