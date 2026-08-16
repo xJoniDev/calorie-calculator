@@ -100,7 +100,7 @@ function downloadTxt() {
         return;
     }
 
-    const werte = [
+    const values = [
         "Recommended daily intake",
         "",
         `Calories: ${calculatedValues.calories} kcal`,
@@ -111,7 +111,7 @@ function downloadTxt() {
         `Salt: ${calculatedValues.saltG} g`
     ];
 
-    const text = werte.join("\n");
+    const text = values.join("\n");
 
     const blob = new Blob(
         [text],
