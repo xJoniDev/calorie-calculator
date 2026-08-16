@@ -12,6 +12,5 @@ A small, in-progress web app for calculating nutritional values
 - Calculation of nutritional values based on: weight, gender, height, sports activities and age
 
 ## Future Features
-- Local authorizations
 - Save Calculation
 - Sending Data to Microsoft :3

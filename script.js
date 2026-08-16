@@ -3,6 +3,10 @@ console.log("Calorie Tracker script loaded.");
 let result = document.getElementById("result");
 let calculatedValues = null;
 
+function accept() {
+    window.location.href = "calorie-tracker.html";
+}
+
 function login() {
     const emailField = document.getElementById("email-login");
     const passwordField = document.getElementById("password-login");
