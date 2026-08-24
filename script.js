@@ -5,7 +5,7 @@ let calculatedValues = null;
 
 function accept() {
     window.location.href = "calorie-tracker.html";
-}
+} 
 
 function login() {
     const emailField = document.getElementById("email-login");
@@ -68,7 +68,7 @@ function calculate() {
     // Salt 5g for adults, 3g for children under 14
     const saltG = age < 14 ? 3 : 5;
 
-    // Store calculated values in an object for Downloadable txt file
+    // Store calculated values in an object for Downloadable .txt file
     calculatedValues = {
     calories: calories,
     fatG: fatG,

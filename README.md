@@ -9,7 +9,4 @@ A small, in-progress web app for calculating nutritional values
 - Use `register.html` to create a new account if the page is present.
 
 ## Current features
-- Calculation of nutritional values based on: weight, gender, height, sports activities and age
-
-## Future Features
-- Save authorizations
+- Calculation of nutritional values (Calories, Carbohydrates, Sugar, Protein, Salt) based on: age, gender, weight, height and activity level.
