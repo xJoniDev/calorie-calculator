@@ -10,3 +10,5 @@ A small, in-progress web app for calculating nutritional values
 
 ## Current features
 - Calculation of nutritional values (Calories, Carbohydrates, Sugar, Protein, Salt) based on: age, gender, weight, height and activity level.
+
+![Preview Image](calorie-calculator.png)
